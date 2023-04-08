@@ -1,3 +1,11 @@
+# Generated files
+scores.json
+matches.json
+stats.csv
+
+# Credentials file (adding to .gitignore should make it harder to accidentally commit credentials)
+creds.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
