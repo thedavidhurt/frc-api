@@ -21,16 +21,27 @@ def main(username: str, api_key: str, season: int, event_code: str):
 
     # Get and write matches
     response = get_match(base_url, credentials, season, event_code, "Qualification", None)
+    if response.status_code >= 400:
+        print("Failed to get matches")
+        if response.status_code == 401:
+            print("Failed to authenticate")
+        return
+    
     json_formatted = format_json(response.text)
     with open('matches.json', 'w') as matches_file:
         matches_file.write(json_formatted)
 
     # Get and write scores
     response = get_scores(base_url, credentials, season, event_code, "Qualification", None)
+    if response.status_code >= 400:
+        print("Failed to get matches")
+        if response.status_code == 401:
+            print("Failed to authenticate")
+        return
+    
     json_formatted = format_json(response.text)
     with open('scores.json', 'w') as scores_file:
         scores_file.write(json_formatted)
-    # print_json(response.text)
     
     # response = get_season_info(base_url, credentials, season)
     # print_json(response.text)
