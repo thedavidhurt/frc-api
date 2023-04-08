@@ -11,8 +11,11 @@ Read and process data from The Blue Alliance API
 ### API authentication setup
 1. Create an account on https://www.thebluealliance.com/account
 2. Generate a Read API Key
-3. Insert username and password into creds.py
+3. Copy creds_template.py to creds.py
+4. Insert username and password into creds.py
 
 ## Run
-1. python frc-api.py
-2. python process_matches_YYYY.py
+1. Open a Powershell terminal in frc-api
+2. .venv/Scripts/Activate.ps1
+3. python frc-api.py
+4. python process_matches_YYYY.py
